@@ -1,0 +1,284 @@
+h2 { font-size: 2em; text-align: center; font-family: "Avenir"; padding: 0.5em 0; }
+.propos {
+  display: flex;
+  h2 { font-size: 2em; text-align: center; font-family: "Avenir"; padding: 0.5em 0; }
+  img {
+    //border-radius: 3px;
+    display: flex;
+    width: 100%;
+    //max-width: 250px;
+    height: auto;
+    object-fit: cover;
+  }
+  //img:first-of-type { filter: grayscale(35%); }
+  p { font-family: "Avenir"; }
+  div:first-of-type { padding-right: 1em; width: 50%; }
+  .images { max-width: 100%; width: 50%; justify-content: center;
+    img { height: 250px; object-fit: fill; border-radius: 3px;
+    width: auto; }
+  }
+  align-items: center;
+}
+
+.posts {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(215px, auto);
+  img { border: solid 1px $grey; border-radius: 3px; }
+}
+.presta-list {
+  display: grid;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(215px, auto);
+  li {
+    border: solid 1px $grey;
+    list-style: none;
+    //height: 5em;
+    width: 100%;
+  }
+  &.nospace {
+    grid-gap: 0px;
+    a { text-decoration: none; }
+    li {
+      border: none;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color : white;
+      height: 100%;
+      &:hover {
+        h3 {}
+      }
+    }
+    li:first-of-type { color: white; }
+  }
+}
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 150px 0;
+  max-height: 500px;
+}
+
+.banner h1, .titre-banner {
+  margin: 0;
+  color: white;
+  text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+  font-size: 32px;
+  //max-width: 1024px;
+  //text-align: left;
+  //margin: auto;
+  font-weight: bold;
+  //font-family: "Tamil MN";
+  font-family: "Allison";
+  font-size: 5em;
+  line-height: 0.5em;
+  font-weight: 100;
+  & > span {
+    font-family: "Avenir";
+    font-weight: normal;
+    font-size: 0.25em;
+  }
+}
+.banner {
+  color: white;
+  background-color: $black;
+  .inside { display: flex;
+    div:first-of-type {
+      flex-grow: 1;
+    }
+    img { width: 50%; }
+  }
+}
+
+.banner {
+  .container {
+    max-width: 1024px;
+    text-align: left;
+    margin: auto;
+    .social-shares {
+      display: flex;
+      list-style: none;
+      padding: 1em;
+      padding-left: 0;
+      padding-right: 0;
+      a {
+        border: none;
+        padding: 0;
+        margin: 0;
+        width: 1em;
+        height: 1em;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-right: 1em;
+        margin-top: 0.5em;
+        i { font-size: 1.5em; }
+      }
+    }
+  }
+  a {
+    color: white;
+    font-family: "Avenir";
+    text-decoration: none;
+    border: solid 1px;
+    border-radius: 3px;
+    padding: 0.2em 1em;
+  }
+}
+.titre-banner .mini {
+  font-size: 4em;
+}
+.titre-page {
+  padding: 0.2em;
+  line-height: 1em !important;
+}
+.clients-pictos {
+  display: flex; justify-content: center;
+  flex-wrap: wrap;
+  li {
+    display: flex;
+    align-items: center;
+    margin: 0em 1em;
+    flex-wrap: wrap;
+  }
+  img { height: 50px; width: auto; }
+}
+#specialites {
+  h3 {
+    font-family: "Allison";
+    font-size: 4em;
+    padding: 0;
+    font-weight: 300;
+    text-align: left;
+  }
+  .texte { width: 50%;
+  p {}
+  }
+  #offers {
+    display: flex;
+    justify-content: space-between;
+    .flex { width: 32%; justify-content: center; }
+    img {
+      width: 100%; object-fit: fill;
+      width: 320px; height: 230px;
+      margin-top: 1em;
+    }
+    h3 { text-align: center; }
+    .texte { width: 100%; }
+    a { display: inline-block; margin: auto; }
+  }
+  height: 450px;
+  position: relative;
+  margin-top: 15em;
+  background: url(https://raw.githubusercontent.com/thomas6791/bernardcook/master/assets/images/background-black.jpeg) no-repeat center center;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  .inside {
+    position: absolute;
+    top: -200px;
+    color: white;
+    left: 0;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    h2 { color: black; }
+  }
+}
+.bouton { display: flex; }
+.accroche {
+  font-size: 1.5em;
+  font-weight: 200;
+  padding: 0;
+  display: flex;
+  margin-top: 3em;
+  margin-bottom: 3em;
+  position: relative;
+  //flex-direction: row-reverse;
+  h2 {
+    font-family: 'Allison'; font-weight: 200;
+    //font-family: 'Avenir'; font-weight: 200;
+    text-align: left;
+    font-size: 1.7em;
+    height: fit-content;
+    align-self: center;
+    padding: 0.5em;
+    width: 33%;
+    line-height: 1em;
+    //padding: 0px;
+    //position: absolute;
+    //left: 15%;
+    left: 20%;
+    bottom: -5%;
+    //top: 50%;
+    z-index: 10;
+    display: flex;
+    align-items: center;
+    //background-color: white;
+    //color: burlywood;
+    color: black;
+    text-shadow: 1px 1px 2px white;
+    flex-direction: column;
+    a {
+      text-decoration: none;
+      color: black;
+      text-align: left;
+      width: 100%;
+    }
+    //text-shadow: 1px 1px 2px black, 0 0 1em burlywood, 0 0 0.2em white;
+  }
+  .img-gradient {
+    width: 300px;
+    height: 350px;
+    position:relative;
+    color: white;
+    img { height: 350px; max-width: 100%; width: 300px; object-fit: cover; object-position: top;
+          border-radius: 2px;
+    }
+    margin-right: 10px;
+  }
+  .img-gradient::after {
+    content: '';
+    position: absolute;
+    left: 0; top: 0;
+    width: 300px; height: 350px;
+    background: linear-gradient(rgba(0, 0, 0, 0),rgba(0, 0, 0, 0.6));
+  }
+  .just-flex {
+    width: 100%;
+    justify-content: end;
+    //display: grid;
+    //grid-template-columns: repeat(3, 1fr);
+    //grid-gap: 2px;
+    //justify-content: space-evenly;
+  }
+}
+#contact {
+  .inside {
+    display: flex;
+    justify-content: space-between;
+    h1, h2 { width: 100%; }
+    .map {
+      width: 48%;
+      img { width: 100%; }
+    }
+  }
+}
+@media all and (min-width: 480px) and (max-width: 768px) {}
+@media all and (max-width: 480px) {
+  .about-head {
+    .about-text {
+      .about-btn {
+      }
+    }
+  }
+  .flex.images.about-image {
+    margin-top: 1.5em;
+    img { width: 100%; }
+  }
+}

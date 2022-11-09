@@ -1,0 +1,157 @@
+//font-family: 'Allison', cursive;
+//font-family: 'Assistant', sans-serif;
+//font-family: 'Klee One', cursive;
+//font-family: 'Urbanist', sans-serif;
+@import "colors";
+* {
+  margin : 0;
+  padding: 0;
+  box-sizing: content-box;
+  //overflow: scroll;
+  //-webkit-overflow-scrolling: touch;
+}
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+html, body {
+  width: 100% !important;
+  overflow-x: hidden !important;
+}
+body {
+  height: 100vh;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
+}
+header { height: 0px; }
+.current {
+  color: green;
+}
+h1, h2, h3, h4, p, ul, li {
+  //font-family: 'Allison', cursive;
+  font-family: "Avenir";
+}
+h1 { font-size: 4em; }
+h2, h3 { font-family: "Avenir"; text-align: center;
+  padding: 0.5em 0;
+}
+.titre-page { font-size: 2.5em; text-align: center; }
+.inside {
+  max-width: 1024px;
+  margin: auto;
+  padding: 2em 0em;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.yellow {
+  background-color: $yellow;
+}
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+  &.reverse { flex-direction: row-reverse; }
+  &.side {
+    margin-top: 2em;
+    margin-bottom: 2em;
+    justify-content: space-between;
+    //border: solid red 1px;
+    .first { width: 60% }
+    .second { width: 30%; }
+  }
+  img { object-fit: fill; height: auto; }
+}
+.just-flex {
+  display: flex;
+}
+#mentions {
+  text-align: left;
+  h2, h3, p { text-align: left; }
+  h2, h3 { font-size: 1.5em; border-bottom: solid 1px; }
+}
+.shadow {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, .12), 0 1px 2px rgba(0, 0, 0, .24)
+}
+#breadcrumbs {
+  font-family: 'Avenir';
+  justify-content: flex-start !important;
+  a {
+    text-decoration: none;
+    color: black !important;
+    padding-right: 5px;
+  }
+}
+.sub-banner {
+  //max-width: 1024px;
+  //margin: auto;
+  h1 {
+    //margin-top: 0.5em;
+    text-align: left;
+  }
+  #breadcrumbs {
+    //position: absolute;
+    //bottom: 0px;
+    color: black;
+  }
+}
+.text-left {
+  text-align: left;
+}
+.menu {
+  text-align: center;
+  border-radius: 5px;
+  //padding: 1em;
+  position: relative;
+  max-width: 600px;
+  margin: auto;
+  .menu-banner {
+    background-position: 70% 30%;
+    background-size: cover;
+    padding: 4em;
+    position: relative;
+    border-radius: 5px 5px 0px 0px;
+    //background-image: url(../assets/images/banner-bernardcook-min.jpeg);
+    h2, p:first-of-type { color: white; }
+    .prix {
+      border-radius: 50%;
+      display: inline-flex;
+      width: 6em;
+      height: 6em;
+      font-size: 1em;
+      background-color: white;
+      justify-content: center;
+      align-items: center;
+      font-weight: 500;
+      position: absolute;
+      bottom: -3em;
+      right: 2em;
+    }
+  }
+  .menu-content {
+    padding: 3em;
+  }
+}
+.img-float {
+  height: 100vh;
+  float: left;
+  object-fit: cover;
+  margin-right: 1.5em;
+  border-radius: 5px;
+}
+.list-offres {
+  li {
+    display: flex;
+    align-items: center;
+    padding: 1em;
+    list-style: none;
+    margin-bottom: 1em;
+    h2 {
+      font-size: 1.5em;
+      min-width: 20%;
+      width: auto;
+      font-weight: 400;
+    }
+    .offre-list-text {
+    border-left: solid 1px lightgrey;
+    padding-left: 10px;
+    }
+  }
+}
