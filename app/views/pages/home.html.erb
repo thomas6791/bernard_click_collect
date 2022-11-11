@@ -35,12 +35,12 @@
         
         <li class="plat-click shadow">
             <div class="plat-first">
-                <h3 class="click-titre" data-plat="{{ plat.name }}">nom</h3>
+                <h3 class="click-titre" data-plat="Paella">Paella</h3>
                 <p class="click-description" data-description="...">description</p>
-                <p class="click-qte" data-qte="0">Pour {{ plat.pers }} pers.</p>
+                <p class="click-qte" data-qte="0">Pour 8 pers.</p>
             </div>
             <div class="plat-second">
-                    <p class="click-prix" data-prix="110.00">prix.00 €</p>
+                    <p class="click-prix" data-prix="110.00">110,00 €</p>
                     <div class="order-btns">
                         <span class="order-btn minus"><i class="fa fa-minus"></i></span>
                         <span class="counter" data-counter="0">0</span>
@@ -60,32 +60,48 @@
     <p>...</p>
 </section>
 <section class="inside" id="commander">
-    <h2>Commander</h2>
-    <%= render "shared/form-click" %>
-</section>
+<h2>Commander</h2>
 
-<section class="inside contact-form space-bottom center">
-<%= simple_form_for :contact_mail, :url => '/contact_send' do |f| %>
-  <h2>Nous contacter</h2>
-  <div class="long">
-    <%= f.input :status, label:"Vous êtes", collection:["Particulier","Professionnel"], input_html: { value: nil }, prompt: "", required: true %>
-    <%= f.input :demande, label:"Votre demande concerne", collection:["Acheter","Vendre", "Louer","Gestion locative","Estimation","Autre"], input_html: { value: nil }, prompt: "", required: true %>
+<div class="inside contact-form space-bottom center">
+<%= simple_form_for :contact_mail, :html=> { class: 'form-click' }, :url => '/contact_send' do |f| %>
+
+  <div class="full">
+    <div class="half">
+      <%= f.input :prenom, label:"Prénom", input_html: { value: nil }, prompt: "", required: true %>
+    </div>
+    <div class="half">
+      <%= f.input :nom,label:"Nom", input_html: { value: nil }, placeholder: "", required: true%>
+    </div>
   </div>
-  <div class="long">
-    <%= f.input :lastname,label:"Nom", input_html: { value: nil }, placeholder: "", required: true %>
-    <%= f.input :firstname,label:"Prénom", input_html: { value: nil }, placeholder: "", required: true%>
+
+  <div class="full">
+    <div class="half">
+      <%= f.input :email, label:"Email", input_html: { value: nil }, prompt: "", required: true %>
+    </div>
+    <div class="half">
+      <%= f.input :tel,label:"Tel", input_html: { value: nil }, placeholder: "", required: true%>
+    </div>
   </div>
-  <div class="long">
-    <%= f.input :email,label:"Email", input_html: { value: nil }, placeholder: "", required: true%>
-    <%= f.input :tel,label:"Tel", input_html: { value: nil }, placeholder: "", required: true%>
+
+  <div class="full">
+    <div class="half">
+      <%= f.input :day, as: :date, html5: true, label:"Jour", input_html: { value: nil }, prompt: "", required: true %>
+    </div>
+    <div class="half">
+      <%= f.input :hour, as: :time,label:"Heure", input_html: { value: nil }, placeholder: "", required: true%>
+    </div>
   </div>
-    <%= f.input :message,label:"Message", as: :text, input_html: {:rows => 5}, placeholder: "", required: true %>
-    <%= f.input :rgpd, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', required: true, label:"J'accepte que mes données soient transmises dans le cadre de ma démarche. En savoir plus sur notre politique de confidentialité" %>
-    <p></p>
-    <%= f.button :submit, 'Envoyer' %>
+
+
+  <div class="checkbox">
+    <label for="">
+      <input type="checkbox" name="terms" value="J'accepte que mes données soient transmises dans le cadre de ma demande" required="">
+      J'accepte que mes données soient transmises dans le cadre de ma demande
+    </label>
+  </div>
+  <div>
+    <%= f.button :submit, 'Envoyer', class: 'btn btn-primary' %>
+  </div>
   <% end %>
-</section>
-
-<div data-controller="hello">
-<div class="btn btn-primary" data-action="click->hello#greet">Say Hello</div>
 </div>
+</section>
