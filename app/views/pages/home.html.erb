@@ -29,18 +29,18 @@
     <h2>Click & Collect</h2>
 </div>
 </section>
-<section class="inside">
+<section class="inside" data-controller="commande">
     <h2>Les plats à emporter</h2>
     <ul class="plats-click">
         
         <li class="plat-click shadow">
             <div class="plat-first">
-                <h3 class="click-titre" data-plat="{{ plat.name }}">nom</h3>
-                <p class="click-description" data-description="...">description</p>
-                <p class="click-qte" data-qte="0">Pour {{ plat.pers }} pers.</p>
+                <h3 class="click-titre" data-plat="Paella">Paella - fruits de mer</h3>
+                <p class="click-description" data-description="...">Paellla spéciale fruits de mer</p>
+                <p class="click-qte" data-qte="0">Pour 8 pers.</p>
             </div>
             <div class="plat-second">
-                    <p class="click-prix" data-prix="110.00">prix.00 €</p>
+                    <p class="click-prix" data-prix="110.00">110,00 €</p>
                     <div class="order-btns">
                         <span class="order-btn minus"><i class="fa fa-minus"></i></span>
                         <span class="counter" data-counter="0">0</span>
@@ -50,11 +50,9 @@
         </li>
         
     </ul>
-</section>
-<section class="inside">
-    <div id="order-summary">
+    <div id="order-summary" class="inside">
         <p>Total : <span>0.00</span> €</p>
-        <a href="" class="btn btn-primary" id="test-commande">Commander</a>
+        <a href="#commander" class="btn btn-primary" id="btn-commande" data-action="click->commande#commandeNext:prevent">Commander</a>
     </div>
 </section>
 <section class="inside">
@@ -62,28 +60,50 @@
     <p>...</p>
 </section>
 <section class="inside" id="commander">
-    <h2>Commander</h2>
-    <%= render "shared/form-click" %>
-</section>
+<h2>Commander</h2>
 
-<section class="inside contact-form space-bottom center">
-<%= simple_form_for :contact_mail, :url => '/contact_send' do |f| %>
-  <h2>Nous contacter</h2>
-  <div class="long">
-    <%= f.input :status, label:"Vous êtes", collection:["Particulier","Professionnel"], input_html: { value: nil }, prompt: "", required: true %>
-    <%= f.input :demande, label:"Votre demande concerne", collection:["Acheter","Vendre", "Louer","Gestion locative","Estimation","Autre"], input_html: { value: nil }, prompt: "", required: true %>
+<div class="inside contact-form space-bottom center" id="">
+<%= simple_form_for :contact_mail, :html=> { class: 'form-click' }, :url => '/contact_send' do |f| %>
+
+  <div class="full">
+    <div class="half">
+      <%= f.input :prenom, label:"Prénom", input_html: { value: nil }, prompt: "", required: true %>
+    </div>
+    <div class="half">
+      <%= f.input :nom,label:"Nom", input_html: { value: nil }, placeholder: "", required: true%>
+    </div>
   </div>
-  <div class="long">
-    <%= f.input :lastname,label:"Nom", input_html: { value: nil }, placeholder: "", required: true %>
-    <%= f.input :firstname,label:"Prénom", input_html: { value: nil }, placeholder: "", required: true%>
+
+  <div class="full">
+    <div class="half">
+      <%= f.input :email, label:"Email", input_html: { value: nil }, prompt: "", required: true %>
+    </div>
+    <div class="half">
+      <%= f.input :tel,label:"Tel", input_html: { value: nil }, placeholder: "", required: true %>
+    </div>
   </div>
-  <div class="long">
-    <%= f.input :email,label:"Email", input_html: { value: nil }, placeholder: "", required: true%>
-    <%= f.input :tel,label:"Tel", input_html: { value: nil }, placeholder: "", required: true%>
+
+  <div class="full">
+    <div class="half">
+      <%= f.input :day, as: :date, html5: true, label:"Jour de récupération de la commande", input_html: { value: nil }, prompt: "", required: true %>
+    </div>
+    <div class="half">
+      <%= f.input :hour, as: :time,:minute_step => 15,label:"Heure de récupération", input_html: { value: nil }, placeholder: "", required: true%>
+    </div>
   </div>
-    <%= f.input :message,label:"Message", as: :text, input_html: {:rows => 5}, placeholder: "", required: true %>
-    <%= f.input :rgpd, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', required: true, label:"J'accepte que mes données soient transmises dans le cadre de ma démarche. En savoir plus sur notre politique de confidentialité" %>
-    <p></p>
-    <%= f.button :submit, 'Envoyer' %>
+  <div class="">
+    <%= f.input :message, :input_html => { :rows => 5, :cols => 10 }, label:"Commentaire", required: false %>
+  </div>
+  <%= f.hidden_field :plats, :value => "" %>
+  <%= f.hidden_field :quantite, :value => 0 %>
+  <%= f.hidden_field :montant, :value => 0 %>
+
+  <div class="checkbox">
+      <%= f.input :rgpd, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', label:"J'accepte que mes données soient transmises dans le cadre de ma demande", required: true %>
+  </div>
+  <div>
+    <%= f.button :submit, 'Envoyer', class: 'btn btn-primary' %>
+  </div>
   <% end %>
+</div>
 </section>
