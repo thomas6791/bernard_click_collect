@@ -1,0 +1,21 @@
+@import "colors";
+.btn {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  text-decoration: none;
+  &.btn-primary {
+    background-color: $red;
+    font-family: 'Avenir';
+    border: none;
+    width: auto;
+    cursor: pointer;
+    padding: 0.3em 2em;
+    border-radius: 3px;
+    font-weight: 500;
+    color: white;
+    &.yellow { background-color: $yellow; }
+    &.purple { background-color: $purple; }
+    &.pink { background-color: $pink; }
+  }
+}

@@ -1,2 +1,67 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+<section class="banner" style="background-image: url(/assets/banner-bernardcook-min.jpeg);">
+    <div class="container">
+      <span class="titre-banner mini">Bernard Cook<br>
+      <span class="">au service de la Cuisine .</span></span>
+      <br><br>
+      <a class="btn btn-flat" href="/contact.html">Contact & devis</a>
+      <ul class="social-shares">
+        <a href="https://www.facebook.com/profile.php?id=100076486681265" target="_blank"><li><i class="fa fa-facebook"></i></li></a>
+        <a href="{{site.social_links.instagram}}" target="_blank"><li><i class="fa fa-instagram" aria-hidden="true"></i></li></a>
+      </ul>
+    </div>
+    <h1 class="titre-page">Click & Collect</h1>
+</section>
+<div class="test">
+    <div class="sub-banner inside">
+      
+    </div>
+</div>
+
+<section class="inside click-presentation">
+    <div>
+        <p>Profitez de nos plats conviviviaux pour chez vous en optant pour le click & collect.<br>Les commandes se font une semaine à l'avance.<br>
+        Les plats sont récupérés tièdes, pouvant être réchauffé au four, plaque, gazinière,...<br><br>
+        <span>Une consigne de 20€ par plat est demandée et restituée lors de sa remise.</span>
+        </p>
+    </div>
+<div>
+    <img src="/assets/images/pictos/take-away.png">
+    <h2>Click & Collect</h2>
+</div>
+</section>
+<section class="inside">
+    <h2>Les plats à emporter</h2>
+    <ul class="plats-click">
+        
+        <li class="plat-click shadow">
+            <div class="plat-first">
+                <h3 class="click-titre" data-plat="{{ plat.name }}">nom</h3>
+                <p class="click-description" data-description="...">description</p>
+                <p class="click-qte" data-qte="0">Pour {{ plat.pers }} pers.</p>
+            </div>
+            <div class="plat-second">
+                    <p class="click-prix" data-prix="110.00">prix.00 €</p>
+                    <div class="order-btns">
+                        <span class="order-btn minus"><i class="fa fa-minus"></i></span>
+                        <span class="counter" data-counter="0">0</span>
+                        <span class="order-btn plus"><i class="fa fa-plus"></i></span>
+                    </div>
+            </div>
+        </li>
+        
+    </ul>
+</section>
+<section class="inside">
+    <div id="order-summary">
+        <p>Total : <span>0.00</span> €</p>
+        <a href="" class="btn btn-primary" id="test-commande">Commander</a>
+    </div>
+</section>
+<section class="inside">
+    <h2>Conditions de livraison</h2>
+    <p>...</p>
+</section>
+<section class="inside" id="commander">
+    <h2>Commander</h2>
+    <%= render "shared/form-click" %>
+</section>

@@ -1,0 +1,45 @@
+<form class="form-click" name="click-collect" action="/success" netlify-honeypot="bot-field" method="POST" data-netlify="true">
+  <p>Coordonnées</p>
+  <div class="full">
+    <div class="half">
+      <label for="prenom">Prénom</label>
+      <input type="" name="prenom" class="">
+    </div>
+    <div class="half">
+      <label for="nom">Nom</label>
+      <input type="" name="nom" class="">
+    </div>
+  </div>
+
+  <div class="full">
+    <div class="half">
+      <label for="email">Email</label>
+      <input type="email" name="email" id="email">
+    </div>
+    <div class="half">
+      <label for="tel">Tel</label>
+      <input type="tel" name="tel" id="tel">
+    </div>
+  </div>
+  <p>Date de récupération des plats</p>
+  <div class="full">
+    <div class="half">
+      <label for="day">Jour</label>
+      <input type="date" name="day" id="day">
+    </div>
+    <div class="half">
+      <label for="hour">Heure</label>
+      <input type="time" step="900" name="hour" id="hour">
+    </div>
+  </div>
+  
+  <div class="checkbox">
+    <label for="">
+      <input type="checkbox" name="terms" value="J'accepte que mes données soient transmises dans le cadre de ma demande" required="">
+      J'accepte que mes données soient transmises dans le cadre de ma demande
+    </label>
+  </div>
+  <div>
+    <input type="submit" value="Envoyer" class="btn btn-primary">
+  </div>
+</form>

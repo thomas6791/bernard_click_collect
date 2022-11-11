@@ -1,0 +1,92 @@
+@import "colors";
+.banner-color {
+  position: relative;
+  /* Rectangle 4: */
+  //background-image: linear-gradient(55deg, #000000 0%, $yellow 100%);
+  /* Rectangle 4: */
+  //background-image: linear-gradient(46deg, rgba(0,0,0,0.74) 0%, $yellow 100%);
+  /* Rectangle 4: */
+  background-image: linear-gradient(45deg, rgba(0,0,0,0.74) 0%, rgba(252,187,109,0.81) 100%);
+
+  /* Rectangle 4: */
+  //background-image: linear-gradient(223deg, #FFFFFF 0%, #F3D5D9 19%, #E8ADB4 43%, $yellow 76%);
+  color: white;
+  height: 350px;
+  display: flex;
+  -webkit-display: flex;
+  justify-content: center;
+  align-items: end;
+   -webkit-align-items: flex-end;
+   height: 450px;
+  .test {
+    max-width: 1024px;
+    width: 100%;
+    height: 100%;
+    //background-color: green;
+    display: flex;
+    -webkit-display: flex;
+    justify-content: flex-start;
+    align-items: end;
+    -webkit-align-items: flex-end;
+    position: relative;
+    //flex-direction: column;
+    //justify-content: space-between;
+
+    .sub-banner {
+      width: 90%;
+      height: 120px;
+      background-color: white;
+      display: flex;
+      align-items: center;
+      padding: 10px;
+      position: relative;
+      h1 {
+        color: $black;
+        flex-wrap: wrap;
+        font-weight: 400;
+        width: 100%;
+        //background-color: white;
+        //padding: 10px;
+        //height: 120px;
+        display: inline-block;
+        vertical-align: middle;
+        text-align: left;
+        z-index: 10;
+        font-size: 2em;
+        text-align: center;
+        //line-height: normal;
+      }
+    }
+    .container-banner {
+      margin: 0;
+      color: white;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.2);
+      font-size: 32px;
+      //max-width: 1024px;
+      //text-align: left;
+      //margin: auto;
+      font-weight: bold;
+      //font-family: "Tamil MN";
+      font-family: "Allison";
+      font-size: 5em;
+      line-height: 0.5em;
+      font-weight: 100;
+      position: absolute;
+      left: 0%;
+      top: 50%;
+      .sub-titre-logo {
+        font-family: "Avenir";
+        font-weight: normal;
+        font-size: 0.25em;
+      }
+    }
+  }
+
+  svg { position: absolute; max-width: 1024px; width: 100%; right: 0; }
+  img {
+    position: absolute;
+    right: 0;
+    bottom: 0px;
+    z-index: -1;
+  }
+}
