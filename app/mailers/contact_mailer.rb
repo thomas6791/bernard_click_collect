@@ -10,6 +10,6 @@ class ContactMailer < ApplicationMailer
         @status = params[:status]
         @rgpd = params[:rgpd]
         @status = params[:status]
-        mail(to: "hunckler.thomas@hotmail.fr",reply_to: @email, subject: "Nouveau message de Marine Weishaar Immobilier")
+        mail(to: @email,reply_to: contact@bernardcook.fr, subject: "Votre commande en Click & Collect chez Bernard Cook")
     end
 end

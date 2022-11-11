@@ -10,8 +10,9 @@ class PagesController < ApplicationController
     else
       contact[:rgpd] = "non"
     end
+    fail
   
-    ContactMailer.with(status:contact[:status],type_demande:contact[:demande],email: contact[:email], lastname: contact[:lastname], firstname: contact[:firstname], tel: contact[:tel], message: contact[:message], rgpd: contact[:rgpd]).new_contact_email.deliver_later
+    ContactMailer.with(prenom:contact[:prenom],nom:contact[:nom],email: contact[:email],tel:contact[:tel],date_commande: Time.now, date_reception: contact[:day],rgpd: contact[:rgpd]).new_contact_email.deliver_later
     flash[:notice] = "Votre mail a été envoyé avec succès"
     redirect_to root_path 
   end
