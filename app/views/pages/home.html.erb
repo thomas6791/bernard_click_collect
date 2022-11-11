@@ -65,3 +65,25 @@
     <h2>Commander</h2>
     <%= render "shared/form-click" %>
 </section>
+
+<section class="inside contact-form space-bottom center">
+<%= simple_form_for :contact_mail, :url => '/contact_send' do |f| %>
+  <h2>Nous contacter</h2>
+  <div class="long">
+    <%= f.input :status, label:"Vous êtes", collection:["Particulier","Professionnel"], input_html: { value: nil }, prompt: "", required: true %>
+    <%= f.input :demande, label:"Votre demande concerne", collection:["Acheter","Vendre", "Louer","Gestion locative","Estimation","Autre"], input_html: { value: nil }, prompt: "", required: true %>
+  </div>
+  <div class="long">
+    <%= f.input :lastname,label:"Nom", input_html: { value: nil }, placeholder: "", required: true %>
+    <%= f.input :firstname,label:"Prénom", input_html: { value: nil }, placeholder: "", required: true%>
+  </div>
+  <div class="long">
+    <%= f.input :email,label:"Email", input_html: { value: nil }, placeholder: "", required: true%>
+    <%= f.input :tel,label:"Tel", input_html: { value: nil }, placeholder: "", required: true%>
+  </div>
+    <%= f.input :message,label:"Message", as: :text, input_html: {:rows => 5}, placeholder: "", required: true %>
+    <%= f.input :rgpd, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', required: true, label:"J'accepte que mes données soient transmises dans le cadre de ma démarche. En savoir plus sur notre politique de confidentialité" %>
+    <p></p>
+    <%= f.button :submit, 'Envoyer' %>
+  <% end %>
+</section>

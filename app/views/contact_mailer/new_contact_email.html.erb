@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <p>Test réception email ...!</p>
+    <p>
+    ...<br>
+    --------------------------
+    </p>
+    <p>Type de contact: <%= @status %></p>
+    <p>Demande: <%= @type_demande %></p>
+    <p>Nom: <%= @lastname %> <%= @firstname %></p>
+    <p>Email: <%= @email %></p>
+    <p>Tel: <%= @tel %></p>
+    <p>
+    Message: <%= @message %><br>
+    ----------
+    </p>
+    <p>
+    <%= @message %>
+    </p>
+    <p>Accepte RGPD : <%= @rgpd %></p>
+  </body>
+</html>
