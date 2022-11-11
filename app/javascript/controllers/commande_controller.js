@@ -28,4 +28,8 @@ btns.forEach((btn) => {
       })
   })
     }
+    commandeNext() {
+        console.log("next commande")
+        let nbrePlats = document.querySelector("#contact_mail_quantite").value = parseFloat(document.querySelector(".counter").innerHTML)
+      }
 }
