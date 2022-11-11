@@ -3,13 +3,15 @@ class ContactMailer < ApplicationMailer
     def new_contact_email
         @email = params[:email]
         @tel = params[:tel]
-        @lastname = params[:lastname]
-        @firstname = params[:firstname]
+        @lastname = params[:nom]
+        @firstname = params[:prenom]
         @message = params[:message]
-        @type_demande = params[:type_demande]
-        @status = params[:status]
+        @commande_faite = params[:date_commande]
+        @date_reception = params[:date_reception]
+        #@type_demande = params[:type_demande]
+        #@status = params[:status]
         @rgpd = params[:rgpd]
-        @status = params[:status]
-        mail(to: @email,reply_to: contact@bernardcook.fr, subject: "Votre commande en Click & Collect chez Bernard Cook")
+        #@status = params[:status]
+        mail(to: @email,reply_to: 'contact@bernardcook.fr', subject: "Votre commande en Click & Collect chez Bernard Cook")
     end
 end
