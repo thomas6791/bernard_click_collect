@@ -55,7 +55,7 @@ Rails.application.configure do
   config.log_tags = [ :request_id ]
 
   config.action_mailer.delivery_method = :postmark
-  config.action_mailer.default_url_options = { host: ‘bernard-click-collect.herokuapp.com’} # in production.rb add your domain as the host, e.g. example.com
+  config.action_mailer.default_url_options = { host: 'localhost:3000'} # in production.rb add your domain as the host, e.g. example.com
   config.action_mailer.perform_deliveries = true
   config.action_mailer.postmark_settings = {
    api_token: Rails.application.credentials.postmark_api_token
