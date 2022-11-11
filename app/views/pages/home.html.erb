@@ -79,7 +79,7 @@
       <%= f.input :email, label:"Email", input_html: { value: nil }, prompt: "", required: true %>
     </div>
     <div class="half">
-      <%= f.input :tel,label:"Tel", input_html: { value: nil }, placeholder: "", required: true%>
+      <%= f.input :tel,label:"Tel", input_html: { value: nil }, placeholder: "", required: true %>
     </div>
   </div>
 
@@ -91,8 +91,12 @@
       <%= f.input :hour, as: :time,:minute_step => 15,label:"Heure de récupération", input_html: { value: nil }, placeholder: "", required: true%>
     </div>
   </div>
+  <div class="">
+    <%= f.input :message, :input_html => { :rows => 5, :cols => 10 }, label:"Commentaire", required: false %>
+  </div>
   <%= f.hidden_field :plats, :value => "" %>
   <%= f.hidden_field :quantite, :value => 0 %>
+  <%= f.hidden_field :montant, :value => 0 %>
 
   <div class="checkbox">
       <%= f.input :rgpd, as: :boolean, checked_value: 'positive', unchecked_value: 'negative', label:"J'accepte que mes données soient transmises dans le cadre de ma demande", required: true %>

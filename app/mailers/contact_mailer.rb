@@ -8,6 +8,8 @@ class ContactMailer < ApplicationMailer
         @message = params[:message]
         @commande_faite = params[:date_commande]
         @date_reception = params[:date_reception]
+        @qty = params[:qty]
+        @montant = params[:montant]
         #@type_demande = params[:type_demande]
         #@status = params[:status]
         @rgpd = params[:rgpd]

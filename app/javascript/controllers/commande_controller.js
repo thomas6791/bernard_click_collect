@@ -30,6 +30,7 @@ btns.forEach((btn) => {
     }
     commandeNext() {
         console.log("next commande")
-        let nbrePlats = document.querySelector("#contact_mail_quantite").value = parseFloat(document.querySelector(".counter").innerHTML)
+        document.querySelector("#contact_mail_quantite").value = document.querySelector(".counter").innerHTML
+        document.querySelector("#contact_mail_montant").value = document.querySelector("#order-summary").querySelector("span").innerHTML
       }
 }
