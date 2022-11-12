@@ -24,10 +24,10 @@
         <span>Une consigne de 20€ par plat est demandée et restituée lors de sa remise.</span>
         </p>
     </div>
-<div>
-    <img src="/assets/images/pictos/take-away.png">
-    <h2>Click & Collect</h2>
-</div>
+    <div>
+      <%= image_tag "paella-fruits-mer.png", width: 200 %>
+      <h2>Click & Collect</h2>
+    </div>
 </section>
 <section class="inside" data-controller="commande">
     <h2>Les plats à emporter</h2>
@@ -35,12 +35,12 @@
         
         <li class="plat-click shadow">
             <div class="plat-first">
-                <h3 class="click-titre" data-plat="Paella">Paella - fruits de mer</h3>
-                <p class="click-description" data-description="...">Paellla spéciale fruits de mer</p>
-                <p class="click-qte" data-qte="0">Pour 8 pers.</p>
+                <h3 class="click-titre" data-plat="Paella">Paëlla<br>fruits de mer</h3>
+                <p class="click-description" data-description="...">Paëllla spéciale fruits de mer pour 8 pers.(5 légumes, herbes, moules, palourdes, crevettes crues; gambas crues, calamar frais entier.<br>Vous pouvez la remettre en température via un four ou vitrocéramique.<br>Offre valable de décembre à janvier.<br>
+                Inclus une consigne de 20€ sur le plat</p>
             </div>
             <div class="plat-second">
-                    <p class="click-prix" data-prix="110.00">110,00 €</p>
+                    <p class="click-prix" data-prix="150.00">150,00 €</p>
                     <div class="order-btns">
                         <span class="order-btn minus"><i class="fa fa-minus"></i></span>
                         <span class="counter" data-counter="0">0</span>
@@ -56,15 +56,15 @@
     </div>
 </section>
 <section class="inside">
-    <h2>Conditions de livraison</h2>
-    <p>...</p>
+    <h2>Conditions de commande</h2>
+    <p>Les commandes se font le lundi et mardi pour ensuite récupérer la commande le samedi ou le dimanche suivant entre 11h30 et 12h30</p>
+    <p></p>
 </section>
 <section class="inside" id="commander">
 <h2>Commander</h2>
 
 <div class="inside contact-form space-bottom center" id="">
 <%= simple_form_for :contact_mail, :html=> { class: 'form-click' }, :url => '/contact_send' do |f| %>
-
   <div class="full">
     <div class="half">
       <%= f.input :prenom, label:"Prénom", input_html: { value: nil }, prompt: "", required: true %>
@@ -84,11 +84,8 @@
   </div>
 
   <div class="full">
-    <div class="half">
+    <div class="">
       <%= f.input :day, as: :date, html5: true, label:"Jour de récupération de la commande", input_html: { value: nil }, prompt: "", required: true %>
-    </div>
-    <div class="half">
-      <%= f.input :hour, as: :time,:minute_step => 15,label:"Heure de récupération", input_html: { value: nil }, placeholder: "", required: true%>
     </div>
   </div>
   <div class="">
