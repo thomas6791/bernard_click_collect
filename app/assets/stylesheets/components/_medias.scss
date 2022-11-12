@@ -148,6 +148,17 @@
       .second { width: 100%; margin-top: 1.5em; }
     }
   }
+  .plat-click {
+    flex-direction: column;
+    .plat-first { 
+      width: 100%;
+    }
+    .plat-second { 
+      width: 100%;
+      .click-prix { width: 100%;}
+      .order-btns { width: 100%;}
+    }
+  }
 }
 
 /*------------------------------------------
@@ -171,6 +182,21 @@
     li {
       flex-direction: column;
     }
+  }
+  .plat-click {
+    flex-direction: column;
+    padding: 0;
+    padding: 10px;
+    .plat-first { 
+      width: 100%;
+      flex-direction: column;
+    }
+    .plat-second { 
+      width: 100%;
+      flex-direction: column;
+      .click-prix, .order-btns { width: 100%;}
+    }
+    .click-titre, .click-description, .click-prix { width:100%; border-right: none;}
   }
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
