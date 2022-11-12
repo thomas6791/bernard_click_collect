@@ -194,9 +194,9 @@
     .plat-second { 
       width: 100%;
       flex-direction: column;
-      .click-prix, .order-btns { width: 100%;}
+      .click-prix, .order-btns { width: 100%; margin-top: 1em;}
     }
-    .click-titre, .click-description, .click-prix { width:100%; border-right: none;}
+    .click-titre, .click-description, .click-prix { padding: 0 !important ;width:100%; border-right: none !important;}
   }
 } /* max-width 640px, mobile-only styles, use when QAing mobile issues */
 
