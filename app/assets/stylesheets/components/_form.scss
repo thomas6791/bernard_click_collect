@@ -31,6 +31,10 @@ form {
       -moz-appearance: none;
       appearance: none;
     }
+    .form-select.mx-1.date {
+      line-height: 1.5em;
+      min-height: 1em;
+    }
     .checkbox {
       -webkit-appearance: auto;
       -moz-appearance: auto;
