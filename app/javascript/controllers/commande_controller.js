@@ -14,6 +14,10 @@ btns.forEach((btn) => {
             let priceQty = parseFloat(event.currentTarget.parentElement.parentElement.querySelector(".click-prix").dataset.prix) * counter;
             amount += parseFloat(event.currentTarget.parentElement.parentElement.querySelector(".click-prix").dataset.prix) * 1;
             document.querySelector("#order-summary").querySelector("span").innerHTML = amount;
+
+            document.querySelector("#contact_mail_quantite").value = document.querySelector(".counter").innerHTML
+            document.querySelector("#contact_mail_montant").value = document.querySelector("#order-summary").querySelector("span").innerHTML
+            
         }
         else {
             let counterData = event.currentTarget.parentElement.querySelector(".counter").innerHTML;
@@ -23,6 +27,9 @@ btns.forEach((btn) => {
             let priceQty = parseFloat(event.currentTarget.parentElement.parentElement.querySelector(".click-prix").dataset.prix) * counter;
             amount -= parseFloat(event.currentTarget.parentElement.parentElement.querySelector(".click-prix").dataset.prix) * 1;
             document.querySelector("#order-summary").querySelector("span").innerHTML = amount;
+
+            document.querySelector("#contact_mail_quantite").value = document.querySelector(".counter").innerHTML
+            document.querySelector("#contact_mail_montant").value = document.querySelector("#order-summary").querySelector("span").innerHTML
 
         }
       })
